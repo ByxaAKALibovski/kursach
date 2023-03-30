@@ -304,9 +304,10 @@ namespace stationeryStore
 
                     if (commandCreate.ExecuteNonQuery() == 1)
                     {
+                        MessageBox.Show("Регистрация прошла учпешно");
                         this.Hide();
-                        mainForm mainForm = new mainForm();
-                        mainForm.Show();
+                        loginForm loginForm = new loginForm();
+                        loginForm.Show();
 
                     }
 

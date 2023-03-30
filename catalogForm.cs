@@ -78,182 +78,491 @@ namespace stationeryStore
 
         private void catalogForm_Load(object sender, EventArgs e)
         {
+            db = new DB();
+
+            db.openConnection();
+
+            table = new DataTable();
+
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar`";
+
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar`", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar`";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
+
+            
+
+            /*table.Clear();
 
             adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            dataGridView1.DataSource = table;*/
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar` WHERE `id_category` = '1'", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `id_category` = '1'";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar` WHERE `id_category` = '2'", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `id_category` = '2'";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar` WHERE `id_category` = '3'", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `id_category` = '3'";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar` WHERE `id_category` = '4'", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `id_category` = '4'";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar` WHERE `id_category` = '5'", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `id_category` = '5'";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
         }
 
         private void toolStripButton7_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar` WHERE `id_category` = '6'", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `id_category` = '6'";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
         }
 
         private void toolStripButton8_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar` WHERE `id_category` = '7'", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `id_category` = '7'";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
         }
 
         private void toolStripButton9_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar` WHERE `id_category` = '8'", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `id_category` = '8'";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
         }
 
         private void toolStripButton10_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar` WHERE `id_category` = '9'", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `id_category` = '9'";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
         }
 
         private void toolStripButton11_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
+
             db = new DB();
 
             db.openConnection();
 
             table = new DataTable();
 
-            adapter = new MySqlDataAdapter("SELECT * FROM `tovar` WHERE `id_category` = '10'", db.getConnection());
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `id_category` = '10'";
 
-            table.Clear();
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
 
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
+        }
+
+        private void btnSearchPrice_Click(object sender, EventArgs e)
+        {
+            string min = minPrice.Text;
+            string max = maxPrice.Text;
+
+            dataGridView1.Rows.Clear();
+
+            db = new DB();
+
+            db.openConnection();
+
+            table = new DataTable();
+
+            string query = "SELECT `title`, `description`, `price`, `id` FROM `tovar` WHERE `price` BETWEEN "+min+" AND "+max+"";
+
+            MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+            MySqlDataReader reader = command.ExecuteReader();
+
+            List<string[]> data = new List<string[]>();
+
+            while (reader.Read())
+            {
+                data.Add(new string[4]);
+
+                data[data.Count - 1][0] = reader[0].ToString();
+                data[data.Count - 1][1] = reader[1].ToString();
+                data[data.Count - 1][2] = reader[2].ToString();
+                data[data.Count - 1][3] = reader[3].ToString();
+            }
+
+            foreach (string[] s in data)
+            {
+                dataGridView1.Rows.Add(s);
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString());
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+
+                string id_tovar = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                string id_user = DataBank.ID;
+
+                db = new DB();
+
+                db.openConnection();
+
+                table = new DataTable();
+
+                string query = "INSERT INTO `basket` (`id`, `id_user`, `id_tovar`) VALUES (NULL, "+ id_user + ", "+ id_tovar + ")";
+
+                MySqlCommand command = new MySqlCommand(query, db.getConnection());
+
+                db.openConnection();
+
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Товар " + dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + " был добавлен в вашу корзину");
+
+                }
+
+                db.closeConnection();
+            }
         }
     }
 }

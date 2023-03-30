@@ -88,9 +88,11 @@ namespace stationeryStore
 
                     while (reader.Read())
                     {
+                        DataBank.ID = reader[0].ToString();
                         DataBank.Name = reader[3].ToString();
                         DataBank.Phone = reader[5].ToString();
                         DataBank.Email = reader[4].ToString();
+                        DataBank.Admin = reader[6].ToString();
                     }
 
                     db.closeConnection();
